@@ -14,7 +14,7 @@
 	
 	<?php
     
-    /*
+   /*
     
     $sql = "SELECT * FROM users";
     $result = query($sql);
@@ -23,9 +23,10 @@
 
     $row = fetch_array($result);
 
-    echo $row['username'];
+    echo $row['last_name'];
     
     */
+    
     
     
     ?>

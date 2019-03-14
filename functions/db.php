@@ -5,6 +5,13 @@
 $con = mysqli_connect('localhost', 'root', '', 'login_db');
 
 
+//row count functon
+
+function row_count($result){
+    return mysqli_num_rows($result);
+}
+
+
 // Escape Function for database
 
 function escape($string){
