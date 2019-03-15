@@ -57,6 +57,73 @@ function token_generator(){
 
 
 
+/**************** Register Page Vaildator ******************/
+
+
+
+function validate_user_registeration(){
+    
+    $errors = [];
+    
+    $min = 3;
+    $max = 20;
+    
+    
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+       
+        $first_name           = clean($_POST['first_name']);
+        $last_name            = clean($_POST['last_name']);
+        $username             = clean($_POST['username']);
+        $email                = clean($_POST['email']);
+        $password             = clean($_POST['password']);
+        $confirm_password     = clean($_POST['confirm_password']);
+        
+        
+        if(strlen($first_name) < $min){
+            
+            $errors[] = "Your first name cannot be less than {$min} characters";
+            
+        }
+        
+        
+        if(empty($first_name)){
+            $errors[] = "your first name cannot be empty";
+         }
+        
+        
+        
+         if(strlen($last_name) < $min){
+            
+            $errors[] = "Your last name cannot be less than {$min} characters";
+            
+        }
+        
+        
+        if(!empty($errors)){
+            
+            foreach($errors as $error){
+                echo $error . "<br/>";
+            }
+            
+        }
+        
+       
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
